@@ -1,0 +1,159 @@
+/*************************
+ border
+**************************/
+$palette:(
+    // c1:#eeeeee,
+    c1:#EAEBF0,
+    c2:#e1e1e1,
+);
+$alias:('row','col','top','left','bottom','right','');
+$c1:map-get($palette, c1);
+
+@mixin create-border(){
+    $var:solid 1rpx $c1;
+    @for $i from 1 through length($alias){
+        $dir:nth($alias,$i);
+        @if $dir == 'row'{
+            &.#{$dir}{
+                border-left: $var;
+                border-right: $var
+            }
+        }
+        @else if $dir == 'col'{
+            &.#{$dir}{
+                border-top: $var;
+                border-bottom: $var;
+            }
+        }
+        @else if $dir == 'top' or $dir == 'bottom' or $dir == 'left' or $dir == 'right'{
+            &.#{$dir}{
+                border-#{$dir}:$var;
+            }
+        }
+        @else {
+            &.all{
+                border:$var;
+            }
+        }
+    }
+}
+.border{
+    $var:solid 1rpx $c1;
+    @include create-border();
+    // &.all{
+    //    border:$var;
+    // }
+    // &.row{
+    //     border-left: $var;
+    //     border-right: $var;
+    // }
+    // &.col{
+    //     border-top: $var;
+    //     border-bottom: $var; 
+    // }
+    // &.left{
+    //     border-left: $var;
+    // }
+    // &.right{
+    //     border-right: $var;
+    // }
+    // &.top{
+    //     border-top: $var;
+    // }
+    // &.bottom{
+    //     border-bottom: $var;
+    // }
+};
+
+/*************************
+ border-radius
+**************************/
+$multiple: 2rpx;
+.border{
+    @for $i from 1 through 20 {
+        &.radius#{$i}{
+            border-radius: $i * $multiple;
+        }
+    }
+};
+
+/*************************
+ margin && padding
+**************************/
+@mixin boxModel($step:5){
+    @for $i from 1 through 10{
+        $number: $step   * $i;
+        $var   : $number * 1rpx;
+        @for $j from 1 through length($alias){
+            $dir:nth($alias,$j);
+            @if $dir == 'row'{
+                .mg-#{$dir}#{$number}{
+                    margin-top: $var;
+                    margin-bottom: $var;
+                }
+                .pg-#{$dir}#{$number}{
+                    padding-top: $var;
+                    padding-bottom: $var;
+                }
+            }
+            @else if $dir == 'col'{
+                .mg-#{$dir}#{$number}{
+                    margin-left: $var;
+                    margin-right: $var;
+                }
+                .pg-#{$dir}#{$number}{
+                    padding-left: $var;
+                    padding-right: $var;
+                }
+            }
+            @else if $dir == 'top' or $dir == 'left' or $dir == 'bottom' or $dir == 'right' {
+                .mg-#{$dir}#{$number}{
+                    margin-#{$dir}:$var;
+                }
+                .pg-#{$dir}#{$number} {
+                    padding-#{$dir}:$var;
+                }
+            }
+            @else{
+                .mg#{$number}{
+                    margin:$var;
+                }
+                .pg#{$number}{
+                    padding:$var;
+                }
+            }
+        }
+    }
+};
+@include boxModel();
+
+/*************************
+ content
+**************************/
+@mixin widths($column: 12) {
+    $col: 100 / $column;
+    @for $i from 1 through $column {
+        $width:percentage($col * $i / 100);
+        @if $i < 10{
+            .u#{$i} {
+                width: $width;
+            }
+        }@else{
+            $x: str-slice('#{$i}',2, 3);
+            .u1#{$x} {
+                 width: $width;
+            }
+        }
+    }
+}
+@include widths();
+
+/*************************
+ float
+**************************/
+.ft-l{
+    float: left;
+}
+.ft-r{
+    float: right;
+}

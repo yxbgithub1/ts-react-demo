@@ -1,0 +1,34 @@
+.flex{
+    display       : flex;
+    flex-wrap     : nowrap; 
+    flex-direction: row;
+    align-items   : center;
+    align-items: stretch;
+    &.center{
+        text-align: center;
+    }
+    &.wrap{
+        flex-wrap:wrap; 
+    }
+    &.inline{
+        display:inline-flex;
+    }
+    &.column{
+        flex-direction: column;
+    } 
+    .child{
+        flex-grow: 1;
+        &.grow0{
+            flex-grow: 0;
+        }
+    }
+}
+
+.dispapy{
+    &.block{
+        display: block;
+    }
+    &.inline-block{
+        display: inline-block;
+    }
+}

@@ -1,8 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.scss';
 import * as serviceWorker from './serviceWorker';
+import { HomeContainer } from '@conts'
+
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <HomeContainer />
+            </div>
+        )
+    }
+}
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
