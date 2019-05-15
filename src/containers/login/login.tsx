@@ -1,12 +1,26 @@
 import React from 'react'
-import BaseContainer from '../base'
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
-class Login extends BaseContainer {
+import './style.scss'
+import Base from '@conts/base'
+import { Page } from '@comps'
+import puerRender from 'pure-render-decorator'
+
+@puerRender
+class Login extends Base {
+    onClick = () => {
+        this.routerGo('/home')
+    }
     render() {
         return (
-            <div>
-
-            </div>
+            <Page>
+                <div className='login'>
+                    登陆页面
+                    <p>
+                        <button onClick={this.onClick}>去首页</button>
+                    </p>
+                </div>
+            </Page>
         )
     }
 }

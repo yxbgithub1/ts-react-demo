@@ -2,18 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
-import { HomeContainer } from '@conts'
+import { RootRouter } from './router'
 
 class App extends React.Component {
     render() {
         return (
-            <div>
-                <HomeContainer />
-            </div>
+            <RootRouter />
         )
     }
 }
-
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

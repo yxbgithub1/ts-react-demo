@@ -1,7 +1,10 @@
 import React from 'react'
 
-export default class BaseContainer<P={}, S={}> extends React.Component {
-    routerGo() { }
+export default class Base<P={}, S={}> extends React.Component<{ history?: any }> {
+
+    routerGo(url: string) {
+        this.props.history.push(url)
+    }
 
     routerPush() { }
 
