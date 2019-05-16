@@ -2,15 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
-import { RootRouter } from './router'
-
-class App extends React.Component {
-    render() {
-        return (
-            <RootRouter />
-        )
-    }
-}
+import { App } from './router'
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

@@ -1,7 +1,7 @@
 import React from 'react'
-import Base from '../base'
-import { UInput, Input } from '@comps'
-import { withLogin } from '../../utils'
+import { Base } from '../base'
+import { UInput, Input } from '@components'
+import { withLogin } from '@utils'
 import puerRender from 'pure-render-decorator'
 
 interface IProps {
@@ -21,7 +21,7 @@ class Home extends Base<IProps, IState> {
     }
 
     componentWillMount() {
-        // console.log('home容器')
+        // console.log('首页', this.props)
     }
 
     onInputChange = ({ dataset, value }: any) => {
@@ -37,6 +37,7 @@ class Home extends Base<IProps, IState> {
     goOther = () => {
         this.routerGo('/login1')
     }
+
 
     render() {
         return (

@@ -1,8 +1,8 @@
-// import React from 'react'
 import {
     Login,
-    Home
-} from '@conts'
+    Home,
+    NotFound
+} from '@containers'
 
 // const HocRoute = (WrapComponent: any) => {
 //     return class extends React.Component<{ location?: any }> {
@@ -14,7 +14,6 @@ import {
 //         }
 //     }
 // }
-
 
 export default [
     {
@@ -28,5 +27,10 @@ export default [
         name: 'home',
         auth: true,
         component: Home,
+    },
+    {
+        path: '/404',
+        name: '404',
+        component: NotFound,
     }
 ]

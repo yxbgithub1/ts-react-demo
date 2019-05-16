@@ -1,15 +1,29 @@
-// export const login = (target: any, name: any, descriptor: any) => {
-//     console.log(target)
-//     console.log(name)
-//     console.log(descriptor)
+// export const withLogin = (component: any) => {
+//     // const componentWillMount = component.prototype.componentWillMount
+//     // component.prototype.componentWillMount = function () {
+//     //     console.log(this.props)
+//     //     const { history, location } = this.props
+
+//     //     if (location.pathname === '/login') {
+//     //         history.push('/home')
+//     //     }
+//     //     componentWillMount.apply(this)
+//     // }
+//     const toString = component.prototype.toString
+//     component.prototype.toString = function () {
+//         console.log(this)
+//         toString.apply(this)
+//     }
+//     return component
 // }
-export const withLogin = (component: any) => {
-    const componentWillMount = component.prototype.componentWillMount
-    component.prototype.componentWillMount = function () {
-        // console.log(this.props)
-        // const { history, location } = this.props
-        componentWillMount.apply(this)
+
+function withLogin(component: any) {
+    component.prototype.value = function () {
+        console.log(1)
     }
     return component
 }
 
+export {
+    withLogin
+}
