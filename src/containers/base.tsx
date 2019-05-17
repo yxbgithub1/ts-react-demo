@@ -1,5 +1,5 @@
 import React from 'react'
-import { DB } from '@utils'
+import DB from '@utils'
 
 class Base<P={}, S={}> extends React.Component<{ history?: any }> {
     routerGo(url: string) {
@@ -15,19 +15,6 @@ class Base<P={}, S={}> extends React.Component<{ history?: any }> {
     }
 }
 
-/**
- * 404
- */
-const NotFound = () => (
-    <div>
-        <h3>404</h3>
-        <div>
-            没有找到这个页面
-        </div>
-    </div>
-)
-
 export {
-    Base,
-    NotFound
+    Base
 }

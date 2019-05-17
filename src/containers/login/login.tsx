@@ -3,21 +3,12 @@ import React from 'react'
 
 import './style.scss'
 import { Base } from '@containers/base'
-import { Page } from '@components'
-import { withLogin } from '../../utils'
+import { Container } from '@components'
 // import { observer, inject } from 'mobx-react'
 import puerRender from 'pure-render-decorator'
 
-@withLogin
 @puerRender
-class Login extends Base {
-
-    componentWillMount() {
-        // console.log(this.props.location)
-        // if(this.token){
-        // }
-    }
-
+export default class Login extends Base {
 
     onClick = () => {
         this.routerGo('/home')
@@ -29,19 +20,11 @@ class Login extends Base {
 
     render() {
         return (
-            <Page>
-                <div className='login'>
-                    登陆页面
-                    <p>
-                        <button onClick={this.onClick}>去首页</button>
-                    </p>
-                    <button onClick={this.goOther}>访问不存在的路由</button>
+            <Container>
+                <div>
+                    登陆
                 </div>
-            </Page>
+            </Container>
         )
     }
-}
-
-export {
-    Login
 }

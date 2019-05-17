@@ -1,5 +1,6 @@
 import React from 'react'
 import { Base } from '@containers/base'
+import { Page } from '@components'
 import { Redirect, withRouter } from 'react-router-dom'
 
 class LayoutContainer extends Base {
@@ -18,10 +19,10 @@ class LayoutContainer extends Base {
         }
 
         return (
-            <div>
+            <Page>
                 {/* 其他公共组件 */}
                 {this.props.children}
-            </div>
+            </Page>
         )
     }
 }

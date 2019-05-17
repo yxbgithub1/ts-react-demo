@@ -1,6 +1,6 @@
 const localStorage = window.localStorage
 
-const DB = {
+export default {
     get(key: string) {
         let value: any = localStorage.getItem(key)
         if (/^\{.*\}$/.test(value)) value = JSON.parse(value)
@@ -13,11 +13,4 @@ const DB = {
     remove(key: string) {
         return localStorage.removeItem(key)
     }
-}
-
-const getToken = () => DB.get('token') || true
-
-export {
-    DB,
-    getToken
 }

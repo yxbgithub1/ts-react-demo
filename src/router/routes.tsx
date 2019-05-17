@@ -1,36 +1,41 @@
-import {
-    Login,
-    Home,
-    NotFound
-} from '@containers'
+import React from 'react'
 
-// const HocRoute = (WrapComponent: any) => {
-//     return class extends React.Component<{ location?: any }> {
-//         shouldComponentUpdate(nextProps: any) {
-//             return nextProps.location !== this.props.location
-//         }
-//         render() {
-//             return <WrapComponent {...this.props} />
-//         }
-//     }
-// }
+function asyncComponent(importComponent: { (): Promise<any>; (): void; }) {
+    return class AsyncComponent extends React.Component<{}, { component?: any }> {
+        constructor(props: any) {
+            super(props)
+            this.state = {
+                component: null
+            }
+        }
+        async componentDidMount() {
+            const { default: component } = await importComponent()
+            this.setState({
+                component
+            })
+        }
+        render() {
+            const C = this.state.component
+            return C ? <C {...this.props} /> : null
+        }
+    }
+}
 
 export default [
     {
         path: '/login',
         name: 'login',
         exact: true,
-        component: Login
+        component: asyncComponent(() => import('@containers/login/login'))
     },
     {
         path: '/home',
         name: 'home',
-        auth: true,
-        component: Home,
+        component: asyncComponent(() => import('@containers/home/home'))
     },
     {
         path: '/404',
         name: '404',
-        component: NotFound,
+        component: asyncComponent(() => import('@containers/layout/404'))
     }
 ]

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Base } from '../base'
 import { UInput, Input } from '@components'
-import { withLogin } from '@utils'
 import puerRender from 'pure-render-decorator'
 
 interface IProps {
@@ -12,16 +11,11 @@ interface IState {
     userName: string
 }
 
-@withLogin
 @puerRender
-class Home extends Base<IProps, IState> {
+export default class Home extends Base<IProps, IState> {
 
     state: IState = {
         userName: ''
-    }
-
-    componentWillMount() {
-        // console.log('首页', this.props)
     }
 
     onInputChange = ({ dataset, value }: any) => {
@@ -58,8 +52,4 @@ class Home extends Base<IProps, IState> {
             </div>
         )
     }
-}
-
-export {
-    Home
 }
