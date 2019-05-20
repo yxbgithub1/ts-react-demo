@@ -11,7 +11,7 @@ class Base<P={}, S={}> extends React.Component<{ history?: any }> {
     routerBack() { }
 
     get token() {
-        return DB.get('token') || true
+        return DB.get('token')
     }
 }
 

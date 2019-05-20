@@ -1,3 +1,7 @@
 .login{
-    border:solid 10px;
+    height: 100vh;
+    .login-inner{
+        width: rem(355*2);
+        background: #fff;
+    } 
 }

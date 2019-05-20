@@ -3,5 +3,7 @@
     height    : 100%;
     overflow-y: scroll; 
     position  : fixed;
+    font-size : rem(28);
+    color     : _font(colors, main);
     -webkit-overflow-scrolling: touch;
 }

@@ -11,3 +11,18 @@
 
 @import './lib/function';
 
+
+input, textarea, select, button{
+    text-rendering: auto;
+    color         : initial;
+    letter-spacing: normal;
+    word-spacing  : normal;
+    text-transform: none;
+    text-indent   : 0px;
+    text-shadow   : none;
+    display       : inline-block;
+    text-align    : start;
+    margin        : 0em;
+    color         : _font(colors, main);
+    font-size     : rem(_font(size, main));
+}

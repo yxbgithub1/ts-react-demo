@@ -8,12 +8,17 @@ $palette:(
     stress: #2eb572,
     teal  : #00b5ad,
     blue  : #1678c2,
-    violet: #5829bb,
+    violet: #8c31ff,
     purple: #9627ba,
     pink  : #e61a8d,
     brown : #A5673F,
-
-    color1:#FFA918,
-    //color2:#6A34D4,
-    color2:#8c31ff
 );
+
+$font:(
+    colors:(
+        main:#333
+    ),
+    size:(
+        main: 28
+    )
+)

@@ -68,7 +68,7 @@ $c1:map-get($palette, c1);
 /*************************
  border-radius
 **************************/
-$multiple: 2rpx;
+$multiple: 1px;
 .border{
     @for $i from 1 through 20 {
         &.radius#{$i}{
@@ -83,7 +83,7 @@ $multiple: 2rpx;
 @mixin boxModel($step:5){
     @for $i from 1 through 10{
         $number: $step   * $i;
-        $var   : $number * 1rpx;
+        $var   : $number * 1px;
         @for $j from 1 through length($alias){
             $dir:nth($alias,$j);
             @if $dir == 'row'{

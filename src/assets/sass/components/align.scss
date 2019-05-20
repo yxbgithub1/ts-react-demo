@@ -11,7 +11,8 @@ $verticals:(middle, baseline, top);
     
 }
 .vertical-middle{
-    & > view,
+    text-align: center;
+    & > *,
     &:after{
         display: inline-block;
         vertical-align: middle;

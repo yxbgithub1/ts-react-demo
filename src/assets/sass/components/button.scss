@@ -1,43 +1,107 @@
-@import '../lib/vars';
-.button{
-    display: inline-block;
-    cursor: pointer;
-    line-height: 1;
-    box-sizing: border-box;
-    //padding: 0.75em 1em;
-    padding: 0.85em 1em;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    appearance: none;
-    border-radius: 9rpx;
-    color: #fff;
-    // background-color: #6A34D4;
-    background-color: map-get($palette ,color2);
-    border:solid 1rpx #eee;
-    transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out;
+@import '../lib/function';
+$buttons:(
+    black : #000,
+    red   : #DB2828,
+    orange: #f26202,
+    yellow: #eaae00,
+    olive : #a7bd0d,
+    green : #21BA45,
+    stress: #2eb572,
+    teal  : #00b5ad,
+    blue  : #1678c2,
+    violet: #8c31ff,
+    purple: #9627ba,
+    pink  : #e61a8d,
+    brown : #A5673F,
+);
 
+@mixin btnCrClass($map){
+    $keys:map-keys($map);
+    @for $i from 1 through length($keys){
+        $key:nth($keys,$i);
+        $val:map-get($map,$key);
+
+        .#{$key}{
+            @if $key == 'default'{
+                color:rgba(0,0,0,.6);
+            }
+            @else{
+                color: #fff;
+            }
+            background-color: $val;
+            &:active,
+            &:before{
+                background-color: darken($val, 8%);
+            }
+        }
+    };
+};
+@include btnCrClass($buttons);
+$sizes:('mini','tiny','small','medium','large','big');
+@for $i from 1 through length($sizes){
+    $font:16;
+    $name:nth($sizes,$i);
+    .#{$name}.button{
+        font-size: rem($font + $i * 4);
+    }
+};
+
+
+.button{
+    cursor                     : pointer;
+    min-height                 : 1em;
+    outline                    : 0;
+    border                     : none;
+    vertical-align             : middle;
+    padding                    : 0.78571429em 1.5em;
+    text-align                 : center;
+    text-transform             : none;
+    text-shadow                : none;
+    font-weight                : 700;
+    line-height                : 1em;
+    font-style                 : normal;
+    text-decoration            : none;
+    border-radius              : rem(6);
+    color:#333;
+    box-shadow                 : 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
+    -webkit-user-select        : none;
+    -moz-user-select           : none;
+    -ms-user-select            : none;
+    user-select                : none;
+    position                   : relative;
+    -webkit-transition         : opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+    transition                 : opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+    will-change                : '';
+    -webkit-tap-highlight-color: transparent;
+    &.disabled{
+        cursor: default;
+        background-image: none!important;
+        box-shadow: none!important;
+    }
     &:active{
         opacity: 0.7;
     }
-
     &.disabled{
-        pointer-events: none;
-        cursor: default;
-        opacity: 0.4;
+        opacity: .45 !important;
+        pointer-events: none!important;
     }
-
-    &.gray{
-        color: #444;
-        background-color: #f5f5f5 !important;
+    span,i{
+        position: relative;
     }
-    &.white{
-        color: #666;
-        // border:none !important;
-        background-color:#fff; 
-    }
-    &.bold{
-        font-weight: 500;
+    i.icon{
+        width:1.18em;
     }
 }
 
+.icon.button{
+    padding: .78571429em .86em;
+    i{
+        padding-right:6px; 
+    }
+}
+.alone.button{
+    i{
+        top: 1px;
+        padding-right:0px; 
+    }
+}
