@@ -1,7 +1,37 @@
 .login{
-    height: 100vh;
+    padding: rem(20);
+    background: #fff;
     .login-inner{
-        width: rem(355*2);
-        background: #fff;
-    } 
+        background: inherit;
+    }
+    .getcode,
+    .icon{
+        top      : 50%;
+        transform: translateY(-50%);
+        position : absolute;
+        &.iconcode{
+            left: rem(2);
+        }
+    }
+    .getcode{
+        right: 0;
+    }
+    input{
+        border-radius: 0;
+        border-bottom: solid 1px _border(colors, main);
+        &:focus{
+            & + .border-scale{
+                transform: scale3d(1, 1, 1);
+                & + .icon{
+                    transition: all 0.5s;
+                    color: _border(colors, hover);
+                }
+            } 
+        }
+    }
+    .border-scale{
+        @extend %border-scale;
+        z-index: 10;
+        background:_border(colors, hover);
+    }
 }

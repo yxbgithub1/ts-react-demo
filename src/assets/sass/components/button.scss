@@ -26,13 +26,13 @@ $buttons:(
                 color:rgba(0,0,0,.6);
             }
             @else{
-                color: #fff;
+                color: #fff !important;
             }
             background-color: $val;
-            &:active,
-            &:before{
-                background-color: darken($val, 8%);
-            }
+            // &:active,
+            // &:before{
+            //     background-color: darken($val, 8%);
+            // }
         }
     };
 };
@@ -48,22 +48,17 @@ $sizes:('mini','tiny','small','medium','large','big');
 
 
 .button{
-    cursor                     : pointer;
-    min-height                 : 1em;
-    outline                    : 0;
-    border                     : none;
-    vertical-align             : middle;
-    padding                    : 0.78571429em 1.5em;
-    text-align                 : center;
-    text-transform             : none;
-    text-shadow                : none;
-    font-weight                : 700;
-    line-height                : 1em;
-    font-style                 : normal;
-    text-decoration            : none;
-    border-radius              : rem(6);
-    color:#333;
-    box-shadow                 : 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
+    cursor         : pointer;
+    outline        : 0;
+    border         : none;
+    vertical-align : middle;
+    text-align     : center;
+    min-height: 1em;
+    font-weight: 700;
+    line-height: 1em;
+    padding: .80571429em 1.5em;
+    border-radius  : rem(8);
+    box-shadow     : 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
     -webkit-user-select        : none;
     -moz-user-select           : none;
     -ms-user-select            : none;
@@ -73,6 +68,10 @@ $sizes:('mini','tiny','small','medium','large','big');
     transition                 : opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
     will-change                : '';
     -webkit-tap-highlight-color: transparent;
+
+    &.noborder{
+        box-shadow: none !important;
+    }
     &.disabled{
         cursor: default;
         background-image: none!important;
@@ -93,12 +92,26 @@ $sizes:('mini','tiny','small','medium','large','big');
     }
 }
 
+.basic.button{
+    background: transparent none!important;
+    color: rgba(0,0,0,.6)!important;
+    text-transform: none;
+    text-shadow: none!important;
+    -webkit-box-shadow: 0 0 0 1px rgba(34,36,38,.15) inset;
+    box-shadow: 0 0 0 1px rgba(34,36,38,.15) inset
+}
+
+.fluid.button{
+    width: 100%;
+}
+
 .icon.button{
     padding: .78571429em .86em;
     i{
         padding-right:6px; 
     }
 }
+
 .alone.button{
     i{
         top: 1px;

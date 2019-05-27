@@ -2,7 +2,6 @@
     display       : flex;
     flex-wrap     : nowrap; 
     flex-direction: row;
-    align-items   : center;
     align-items: stretch;
     &.center{
         text-align: center;
@@ -17,18 +16,21 @@
         flex-direction: column;
     } 
     .child{
+        position: relative;
         flex-grow: 1;
+        align-self: stretch;
         &.grow0{
             flex-grow: 0;
+        }
+        &.self-center{
+            align-self: center;
         }
     }
 }
 
-.dispapy{
-    &.block{
-        display: block;
-    }
-    &.inline-block{
-        display: inline-block;
-    }
+.block{
+    display: block;
+}
+.inline-block{
+    display: inline-block;
 }

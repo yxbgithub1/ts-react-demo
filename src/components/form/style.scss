@@ -1,7 +1,12 @@
 .form{
     border: none;
     text-align: left;
+    position: relative;
     .form-item{
-        padding-bottom:rem(20);
+        position:inherit;
     }
+}
+
+.inputbox{
+    width: 100%;
 }

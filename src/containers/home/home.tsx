@@ -1,7 +1,6 @@
 import React from 'react'
 import { Base } from '../base'
-import { UInput, Input } from '@components'
-import puerRender from 'pure-render-decorator'
+import { UInput } from '@components'
 
 interface IProps {
     token?: any
@@ -11,7 +10,6 @@ interface IState {
     userName: string
 }
 
-@puerRender
 export default class Home extends Base<IProps, IState> {
 
     state: IState = {
@@ -39,10 +37,10 @@ export default class Home extends Base<IProps, IState> {
                 <h3>首页</h3>
                 <UInput />
                 <p>
-                    <Input
+                    {/* <Input
                         name='userName'
                         value={this.state.userName}
-                        onChange={this.onInputChange} />
+                        onChange={this.onInputChange} /> */}
                 </p>
                 <p>
                     <button onClick={this.goLogin}>去登陆</button>

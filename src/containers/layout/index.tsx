@@ -1,9 +1,9 @@
 import React from 'react'
-import { Base } from '@containers/base'
+import { Base } from '@containers'
 import { Page } from '@components'
 import { Redirect, withRouter } from 'react-router-dom'
 
-class LayoutContainer extends Base {
+class LayoutContainer extends Base<{ location?: any }> {
     render() {
         const path = this.props.location.pathname
         if (!this.token) {

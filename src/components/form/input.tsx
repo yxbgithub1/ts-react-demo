@@ -1,26 +1,38 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
+import { InputType } from './type'
 import './style.scss'
 
 interface IInputProps {
     value: string,
     name?: string,
-    onChange: (e: any) => void
+    type: InputType,
+    placeholder?: string,
+    maxLength?: number,
+    className?: string,
+    onChange: (value: string, name?: string) => void
 }
 
-class Input extends Component<IInputProps, {}> {
-    onChange = (e: any) => {
-        this.props.onChange(e.target)
+interface IInputState {
+    isFocus: boolean
+}
+
+export class Input extends PureComponent<IInputProps, IInputState> {
+
+    state: IInputState = {
+        isFocus: false
     }
+
+    onChange = ({ target: { value, dataset: { name } } }: any) => this.props.onChange(value, name)
+
 
     render() {
-        const { name, value } = this.props
+        const { name, ...rest } = this.props
+
         return (
-            <input data-name={name} value={value} onChange={this.onChange} />
+            <input
+                {...rest}
+                data-name={name}
+                onChange={this.onChange} />
         )
     }
-}
-
-
-export {
-    Input
 }

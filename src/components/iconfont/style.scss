@@ -1,0 +1,11 @@
+$default-color:rgb(170, 169, 169);
+.iconfont {
+    width         : 1.5em; 
+    height        : 1.5em;
+    color         : $default-color;
+    vertical-align: -0.15em;
+    fill          : currentColor;
+    overflow      : hidden;
+    position: relative;
+    transition: color .5s;
+ }

@@ -22,14 +22,14 @@
         "baseUrl": "src",
         "rootDir": ".",
         "paths": {
-            "@components/*": [
-                "./src/components/*"
+            "@components": [
+                "../src/components"
             ],
-            "@containers/*": [
-                "./src/containers/*"
+            "@containers": [
+                "../src/containers"
             ],
-            "@utils/*": [
-                "./src/utils/*"
+            "@utils": [
+                "../src/utils"
             ]
         }
     },

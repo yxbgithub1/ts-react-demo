@@ -1,63 +1,63 @@
-@font-face {
-    font-family: 'iconfont';  /* project id 1136278 */
-    src: url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.eot');
-    src: url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.woff') format('woff'),
-    url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.svg#iconfont') format('svg');
-}
+// @font-face {
+//     font-family: 'iconfont';  /* project id 1136278 */
+//     src: url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.eot');
+//     src: url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.eot?#iefix') format('embedded-opentype'),
+//     url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.woff2') format('woff2'),
+//     url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.woff') format('woff'),
+//     url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.ttf') format('truetype'),
+//     url('//at.alicdn.com/t/font_1136278_pa7ypmvdeye.svg#iconfont') format('svg');
+// }
 
-@mixin iconEach($icons){
-    @each $key, $val in $icons{
-        &.#{$key}:before{
-            content: '#{$val}';
-        }
-    }
-}
+// @mixin iconEach($icons){
+//     @each $key, $val in $icons{
+//         &.#{$key}:before{
+//             content: '#{$val}';
+//         }
+//     }
+// }
 
-$icons:(
-    //首页键盘输入
-    'enter-clear-all': '\e654',
-    'enter-clear'    : '\e60e',
+// $icons:(
+//     //首页键盘输入
+//     'enter-clear-all': '\e654',
+//     'enter-clear'    : '\e60e',
 
-    //首页
-    'grid-jiaojie'   : '\e709',
-    'grid-qianshou'  : '\e6ff',
-    'grid-wode'      : '\e701',
+//     //首页
+//     'grid-jiaojie'   : '\e709',
+//     'grid-qianshou'  : '\e6ff',
+//     'grid-wode'      : '\e701',
     
-    //我的
-    'me-dianpu'      : '\e650',
-    'me-tiaokuan'    : '\e742',
+//     //我的
+//     'me-dianpu'      : '\e650',
+//     'me-tiaokuan'    : '\e742',
 
-    //登陆
-    'login-phone'    : '\e62e',
-    'login-code'     : '\e667',
-    'login-wx'       : '\e655',
+//     //登陆
+//     'login-phone'    : '\e62e',
+//     'login-code'     : '\e667',
+//     'login-wx'       : '\e655',
 
-    //weight
-    'unit-right'     : '\e61f',
-    'unit-selected'  : '\e677',
-    'unit-unselected': '\e676',
-    'unit-saomiao'   : '\e60b',
-    'unit-dianhua'   : '\e614',
-    'unit-toggle'    : '\e662',
-    'unit-success'   : '\e718',
-    'unit-nodata'    : '\e642',
-    'unit-saerch'    : '\e621',
-    'unit-clear'     : '\e623'
-);
+//     //weight
+//     'unit-right'     : '\e61f',
+//     'unit-selected'  : '\e677',
+//     'unit-unselected': '\e676',
+//     'unit-saomiao'   : '\e60b',
+//     'unit-dianhua'   : '\e614',
+//     'unit-toggle'    : '\e662',
+//     'unit-success'   : '\e718',
+//     'unit-nodata'    : '\e642',
+//     'unit-saerch'    : '\e621',
+//     'unit-clear'     : '\e623'
+// );
 
 
-.iconfont {
-    font-family            : "iconfont"   !important;
-    font-size              : 16px;
-    font-style             : normal;
-    -webkit-font-smoothing : antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    @include iconEach($icons);
+// .iconfont {
+//     font-family            : "iconfont"   !important;
+//     font-size              : 16px;
+//     font-style             : normal;
+//     -webkit-font-smoothing : antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+//     @include iconEach($icons);
 
-    &.block{
-        display: block;
-    }
-}
+//     &.block{
+//         display: block;
+//     }
+// }

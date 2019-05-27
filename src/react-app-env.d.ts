@@ -9,8 +9,6 @@ declare namespace NodeJS {
     }
 }
 
-declare module '*';
-
 declare module '*.bmp' {
     const src: string;
     export default src;

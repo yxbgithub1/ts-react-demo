@@ -1,4 +1,5 @@
 @import './vars';
+@import './mixin';
 /*
 * 1rem = 100px  1px = 0.01rem 10 = 0.1rem 
 */
@@ -59,4 +60,38 @@
 
 @function _font($keys...) {
     @return val($font, $keys...);
+}
+
+@function _border($keys...) {
+    @return val($border, $keys...);
+}
+
+
+@mixin border-scale($color:''){
+    &{
+        position:relative;
+    } 
+    &::before{
+        @extend %border-scale;
+    }
+    
+    &:hover,
+    &:focus{ 
+        &::before{
+            z-index: 10;
+            transition: all .3s;
+            transform: scale3d(1, 1, 1);
+        }
+    }
+
+    &.bold{
+        &:before{
+            height: 2px;
+        }
+    }
+    .noscale{
+        &::before{
+            display: none;
+        }
+    }
 }
