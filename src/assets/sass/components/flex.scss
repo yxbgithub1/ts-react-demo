@@ -15,7 +15,7 @@
     &.column{
         flex-direction: column;
     } 
-    .child{
+    &-item{
         position: relative;
         flex-grow: 1;
         align-self: stretch;

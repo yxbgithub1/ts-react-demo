@@ -276,6 +276,9 @@ module.exports = function (webpackEnv) {
                 '@components': '@/components',
                 '@containers': '@/containers',
                 '@utils': '@/utils',
+                '@request': '@/request',
+                '@router': '@/router',
+                '@assets': '@/assets',
             },
             plugins: [
                 // Adds support for installing with Plug'n'Play, leading to faster installs and adding

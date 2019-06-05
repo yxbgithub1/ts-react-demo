@@ -1,0 +1,46 @@
+$icon-paren: rem(70);
+$icon-type:(
+    info: #8c31ff,
+    success: #21BA45,
+    error  : #DB2828,
+    warning: #f26202,
+);
+
+@mixin icon-type($icontype){
+    @each $type, $color in $icontype{
+        .#{$type}{
+            width: $icon-paren;
+            background-color: $color;
+        }
+    }
+}
+
+.message{
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    position: fixed;
+    background-color: transparent;
+    &-inner {
+        left: 50%;
+        top: 10%;
+        overflow: hidden;
+        position: absolute;
+        transform: translateX(-50%);
+        background-color: rgba(255,255,255,1);
+    }
+    &-content{
+        color: #999;
+        font-size: rem(26);
+        padding: rem(22) rem(20) rem(18);
+    }
+
+    .icon{
+        color: #fff;
+        font-size: rem(24);
+        @extend %center;
+    }
+
+    @include icon-type($icon-type)
+}
+

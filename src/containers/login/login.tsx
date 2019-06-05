@@ -1,7 +1,8 @@
-import React from 'react'
 import './style.scss'
+import React from 'react'
 import { Base } from '@containers'
 import { Form, FormItem, Container, Input, IconFont } from '@components'
+import * as API from '@request'
 
 interface IProps {
 
@@ -19,6 +20,15 @@ export default class Login extends Base<IProps, IState> {
     }
 
     onInputChange = (value: any, name: any) => this.setState({ [name]: value })
+
+    onLogin = async () => {
+        const res = await API.login({
+            account: '',    // 15813705799 18948179727 18898653106'13480824996' ,
+            password: ''
+        })
+
+        console.log(res)
+    }
 
     render() {
         const { mobile, code } = this.state
@@ -57,7 +67,11 @@ export default class Login extends Base<IProps, IState> {
                         </FormItem>
 
                         <FormItem className='mg-top70'>
-                            <button className='fluid violet button fonts medium'>登陆</button>
+                            <button
+                                onClick={this.onLogin}
+                                className='fluid violet button fonts medium'>
+                                登陆
+                            </button>
                         </FormItem>
                     </Form>
                 </div>

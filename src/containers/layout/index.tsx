@@ -20,6 +20,7 @@ class LayoutContainer extends Base<{ location?: any }> {
 
         return (
             <Page>
+                {/* <Alert /> */}
                 {/* 其他公共组件 */}
                 {this.props.children}
             </Page>

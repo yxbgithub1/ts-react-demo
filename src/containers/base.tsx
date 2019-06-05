@@ -20,6 +20,11 @@ class Base<P={}, S={}> extends React.Component<PropsType> {
 
     routerBack() { }
 
+    /**
+     * 获取token
+     * @readonly
+     * @memberof Base
+     */
     get token() {
         return DB.get('token')
     }

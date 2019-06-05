@@ -30,6 +30,15 @@
             ],
             "@utils": [
                 "../src/utils"
+            ],
+            "@request": [
+                "../src/request"
+            ],
+            "@router": [
+                "../src/router"
+            ],
+            "@assets": [
+                "../src/assets"
             ]
         }
     },

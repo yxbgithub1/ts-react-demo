@@ -1,6 +1,5 @@
 import React from 'react'
 import { Base } from '../base'
-import { UInput } from '@components'
 
 interface IProps {
     token?: any
@@ -35,7 +34,6 @@ export default class Home extends Base<IProps, IState> {
         return (
             <div>
                 <h3>首页</h3>
-                <UInput />
                 <p>
                     {/* <Input
                         name='userName'
