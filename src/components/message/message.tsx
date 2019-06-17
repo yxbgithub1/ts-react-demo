@@ -1,31 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Toast from './toast'
-import './style.scss'
-import { MessageType, MessageProps, ToastProps } from './type'
+import Modal from './modal'
+import { MessageProps } from './type'
 
-// 默认参数
-const DefaultProps: ToastProps = {
+const doc = document
+const defaultProps: MessageProps = {
     type: 'info',
     duration: 3000,
     message: '默认提示内容'
 }
 
-function Message(props: MessageProps | string, type?: MessageType) {
-    const doc = document
+function Message(props?: MessageProps | string) {
+    const message = doc.getElementsByClassName('message')[0]
+    // 阻止频繁渲染
+    if (message) return
 
     const div = doc.createElement('div')
-    const messageBox = doc.getElementsByClassName('message-content')[0]
-
-    if (messageBox) {
-        messageBox.appendChild(div)
-        doc.body.appendChild(messageBox)
-    } else {
-        const messageBox = doc.createElement('div')
-        messageBox.className = 'message-content'
-        messageBox.appendChild(div)
-        doc.body.appendChild(messageBox)
-    }
+    div.className = 'message'
+    doc.body.appendChild(div)
 
     // 允许只传递提示文本字符串
     if (typeof props === 'string') {
@@ -35,23 +27,14 @@ function Message(props: MessageProps | string, type?: MessageType) {
     }
 
     props = {
-        ...DefaultProps,
-        willUnmount: () => {
-            const messageBox = document.getElementsByClassName('message-content')[0]
-            ReactDOM.unmountComponentAtNode(div)
-            messageBox.removeChild(div);
-
-            if (typeof props !== 'string' && props.onClose instanceof Function) {
-                props.onClose();
-            }
-        },
+        ...defaultProps,
+        node: div,
         ...props,
     }
 
-    const component = React.createElement(Toast, props)
-    ReactDOM.render(component, div)
+    ReactDOM.render(<Modal {...props} />, div)
 }
 
 export {
-    Message,
+    Message
 }

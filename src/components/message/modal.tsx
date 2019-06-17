@@ -18,6 +18,16 @@ export default class Modal extends React.PureComponent<ModalProps, ModalState> {
         this.show()
     }
 
+    componentWillUpdate(props: any, nextProps: any) {
+        console.log(1, props)
+        console.log(2, nextProps)
+    }
+
+    componentWillReceiveProps(props: any, nextProps: any) {
+        console.log(1, props)
+        console.log(2, nextProps)
+    }
+
     show = () => {
         this.setState({
             visible: true
@@ -40,10 +50,9 @@ export default class Modal extends React.PureComponent<ModalProps, ModalState> {
         clearTimeout(this.timeout)
     }
 
-    //type={`${type ? 'iconmessage' : 'icon' + type}`}
     render() {
         const { type, message } = this.props
-        console.log(type)
+        // console.log(this.props)
         return (
             <div className='message-inner flex border radius5'>
                 <div className={`flex-item ${type}`}>
