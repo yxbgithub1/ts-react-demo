@@ -1,4 +1,1 @@
-import DB from './db'
-export * from './decorator'
-
-export default DB
+export { default as Storage } from './libs/storage'

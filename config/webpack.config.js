@@ -275,6 +275,7 @@ module.exports = function (webpackEnv) {
                 '@': path.resolve(__dirname, '../src'),
                 '@components': '@/components',
                 '@containers': '@/containers',
+                '@base': '@/base/',
                 '@utils': '@/utils',
                 '@request': '@/request',
                 '@router': '@/router',
@@ -443,7 +444,7 @@ module.exports = function (webpackEnv) {
                                 loader: 'sass-resources-loader',
                                 options: {
                                     // 这里是需要引入全局的资源文件，它可以是一个字符串或者是一个数组， 通常用数组去代替。
-                                    resources: ['./src/assets/sass/lib/function.scss']
+                                    resources: ['./src/assets/scss/lib/function.scss']
                                 }
                             }),
                             // Don't consider CSS imports dead code even if the

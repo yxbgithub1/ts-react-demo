@@ -1,0 +1,7 @@
+@import './lib/mixin';
+@import './lib/function';
+
+@include skel-layout((
+    reset      : 'normalize',
+    boxModel   : 'border',
+));

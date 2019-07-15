@@ -1,5 +1,5 @@
 import React from 'react'
-import DB from '@utils'
+// import DB from '@utils'
 import { RouteComponentProps } from 'react-router-dom'
 type PathParamsType = {
     // type whatever you expect in the this.props.match.params.*
@@ -26,7 +26,8 @@ class Base<P={}, S={}> extends React.Component<PropsType> {
      * @memberof Base
      */
     get token() {
-        return DB.get('token')
+        return ''
+        // return DB.get('token')
     }
 
     /**
