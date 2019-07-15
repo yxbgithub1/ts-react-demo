@@ -23,7 +23,7 @@ export default class Login extends Base<IProps, IState> {
 
     onLogin = async () => {
         const res = await API.login({
-            account: '',    // 15813705799 18948179727 18898653106'13480824996' ,
+            account: '',    // 15813705799 18948179727 18898653106 '13480824996' ,
             password: ''
         })
 
@@ -43,7 +43,7 @@ export default class Login extends Base<IProps, IState> {
                                 name='mobile'
                                 maxLength={11}
                                 value={mobile}
-                                className='pg-left50'
+                                className='input'
                                 placeholder='请输入手机号'
                                 onChange={this.onInputChange} />
                             <div className='border-scale'></div>
@@ -56,7 +56,7 @@ export default class Login extends Base<IProps, IState> {
                                 name='code'
                                 value={code}
                                 maxLength={6}
-                                className='pg-left50 u12'
+                                className='input'
                                 placeholder='请输入验证码'
                                 onChange={this.onInputChange} />
                             <div className='border-scale'></div>

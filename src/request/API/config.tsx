@@ -14,5 +14,4 @@ export const DEVICE_ID = '439f23cee3d367fe9630f6835c43aa14'
  * 6. refresh_token       刷新token
  * 7. face                人脸识别模式
  */
-
 export const GRANT_TYPE = 'captcha'

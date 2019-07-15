@@ -1,0 +1,57 @@
+.react-cropper-container{
+    .modal,
+    .cropper{
+        top     : 0;
+        left    : 0;
+        width   : 100%;
+        height  : 100%;
+        position: fixed;
+    }
+    .footer{
+        left            : 0;
+        z-index         : 100;
+        width           : 100%;
+        bottom          : 0;
+        position        : absolute;
+        line-height     : rem(100);
+        background-color: #fff;
+    }
+    .upload{
+        left     : 50%;
+        z-index  : 10;
+        opacity  : 0;
+        position : absolute;
+        transform:  translate3d(-50%,0,0);
+    }
+    .modal{
+        $m        : 40;
+        background: rgba(0, 0, 0, 1);
+        &-img{
+            top          : 50%;
+            left         : 50%;
+            position     : absolute;
+            width        : rem(16 * $m);
+            height       : rem(9 * $m);
+            border       : solid 2px #999;
+            // border-radius: rem(8);
+            transform    : translate3d(-50%, -50%, 0);
+        }
+    }
+    .rotate{
+        left     : 50%;
+        z-index  : 100;
+        bottom: rem(120);
+        position : absolute;
+        transform:  translate3d(-50%,0,0);
+        .left,
+        .right{
+            width: rem(120);
+            margin: rem(5);
+            line-height: rem(50);
+            border-radius: rem(4);
+            background-color: #fff;
+            text-align: center;
+            display: inline-block;
+        }
+    }
+}

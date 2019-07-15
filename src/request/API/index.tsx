@@ -11,7 +11,7 @@ export const login = (form: any) => {
         ...form
     }
     return request.post({
+        data,
         code: 'cas.oauth.getToken',
-        data
     })
 }

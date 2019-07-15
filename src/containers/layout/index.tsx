@@ -1,22 +1,23 @@
 import React from 'react'
 import { Base } from '@containers'
 import { Page } from '@components'
-import { Redirect, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class LayoutContainer extends Base<{ location?: any }> {
     render() {
-        const path = this.props.location.pathname
-        if (!this.token) {
-            // 未登陆
-            if (path !== '/login') {
-                return <Redirect to={{ pathname: '/login' }} />
-            }
-        } else {
-            // 已登陆访问登陆页面
-            if (path === '/login') {
-                return <Redirect to={{ pathname: '/home' }} />
-            }
-        }
+        //Redirect,
+        // const path = this.props.location.pathname
+        // if (!this.token) {
+        //     // 未登陆
+        //     if (path !== '/login') {
+        //         return <Redirect to={{ pathname: '/login' }} />
+        //     }
+        // } else {
+        //     // 已登陆访问登陆页面
+        //     if (path === '/login') {
+        //         return <Redirect to={{ pathname: '/home' }} />
+        //     }
+        // }
 
         return (
             <Page>

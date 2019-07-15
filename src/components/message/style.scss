@@ -1,6 +1,6 @@
 $icon-paren: rem(70);
 $icon-type:(
-    info: #8c31ff,
+    info   : #8c31ff,
     success: #21BA45,
     error  : #DB2828,
     warning: #f26202,
@@ -27,7 +27,7 @@ $icon-type:(
         overflow: hidden;
         position: absolute;
         transform: translateX(-50%);
-        background-color: rgba(255,255,255,1);
+        background-color: rgba(255,255,255, 1);
     }
     &-content{
         color: #999;

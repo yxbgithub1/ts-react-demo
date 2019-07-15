@@ -3,7 +3,7 @@ import { InputType } from './type'
 import './style.scss'
 
 interface IInputProps {
-    value: string,
+    value?: string,
     name?: string,
     type: InputType,
     placeholder?: string,

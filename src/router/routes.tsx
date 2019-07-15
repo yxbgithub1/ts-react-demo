@@ -27,10 +27,25 @@ function asyncComponent(importComponent: { (): Promise<any>; (): void; }) {
 
 export default [
     {
+        path: '/card',
+        name: 'card',
+        exact: true,
+        component: asyncComponent(() => import('../containers/card/card'))
+    },
+    {
+        path: '/swiper',
+        name: 'swiper',
+        component: asyncComponent(() => import('../containers/swiper/swiper'))
+    },
+    {
         path: '/login',
         name: 'login',
-        exact: true,
         component: asyncComponent(() => import('../containers/login/login'))
+    },
+    {
+        path: '/cropper',
+        name: 'cropper',
+        component: asyncComponent(() => import('../containers/cropper/cropper'))
     },
     {
         path: '/home',

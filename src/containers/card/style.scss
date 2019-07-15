@@ -1,0 +1,68 @@
+$main-color:#0CB8FB;
+
+.card{
+    background: url('./imgs/card-bg.jpg') no-repeat center;
+    background-size: rem(750) rem(1333);
+    padding: rem(50);
+    .inner{
+        left: 50%;
+        bottom: rem(77*2);
+        position: absolute;
+        width: rem(320 *2);
+        // height: rem(500);
+        transform: translate3d(-50%, 0, 0);
+    }
+    .form{
+        border-radius: rem(12);
+        background: #fff;
+        text-align: center;
+        padding: rem(48) rem(60);
+    }
+    .input{
+        text-align: center;
+        height: rem(48*2);
+        border-radius: rem(55);
+        border:solid 1px _border(colors, main);
+    }
+    .label{
+        padding: rem(20);
+        font-size: rem(28);
+    }
+    .icon{
+        color: #FFC47D;
+        top: rem(5);
+        margin-left: rem(8);
+    }
+    .upload{
+        width: rem(116*2);
+        height: rem(116*2);
+        position: relative;
+        margin: rem(10) auto rem(20);
+        border: dashed 1px $main-color;
+        .add,
+        &-input{
+            top: 50%;
+            left: 50%;
+            color: $main-color;
+            position: absolute;
+            transform: translate3d(-50%, -50%, 0);
+            &:not(.add){
+                opacity: 0;
+                height: 100%;
+                z-index: 100;
+            }
+            &:not(input){
+                font-size: rem(50);
+            }
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            padding: rem(16);
+        }
+    }
+    .button{
+        height: rem(48*2);
+        border-radius: rem(55);
+    }
+}

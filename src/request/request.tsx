@@ -15,8 +15,6 @@ class Request {
     }
 
     static error = (err: Error) => {
-        // console.log('请求报错', err)
-        // Alert.open('请求报错')
         // Message('这是一个服务器弹窗')
         Message({
             type: 'success',
@@ -38,7 +36,7 @@ class Request {
             },
             ...rest
         }
-
+        
         return axios(configs)
             .then(Request.httpStatus)
             .then(Request.success)

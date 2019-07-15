@@ -15,7 +15,7 @@ const Form = (props: any) => {
 
 const FormItem = (props: any) => {
     return (
-        <div className={`form-item flex mg-bottom30 ${props.className || ''}`}>
+        <div className={`form-item flex ${props.className || ''}`}>
             {props.children}
         </div>
     )
