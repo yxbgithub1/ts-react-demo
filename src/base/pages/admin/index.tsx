@@ -1,24 +1,12 @@
 import React, { Fragment } from 'react'
-import { Redirect, withRouter } from 'react-router-dom'
-import { Header, Mainer, Footer } from '@/base/components'
-
 import Base from '@/base'
-import { Props } from './@type'
-class Layout extends Base<Props> {
-    render() {
-        const path = this.props.location.pathname
-        if (!this.token) {
-            // 未登陆
-            if (path !== '/login') {
-                return <Redirect to={{ pathname: '/login' }} />
-            }
-        } else {
-            // 已登陆访问登陆页面
-            if (path === '/login') {
-                return <Redirect to={{ pathname: '/home' }} />
-            }
-        }
+import { Header, Mainer, Footer } from './components'
 
+export default class Admin extends Base {
+    componentDidMount(){
+        console.log(this.token, '当前token')
+    }
+    render() {
         return (
             <Fragment>
                 {/* 全局公共组件 */}
@@ -27,7 +15,7 @@ class Layout extends Base<Props> {
                 <Header />
 
                 {/* 全局容器 */}
-                <Mainer >
+                <Mainer {...this.props}>
                     { this.props.children }
                 </Mainer>
 
@@ -37,5 +25,3 @@ class Layout extends Base<Props> {
         )
     }
 }
-
-export default withRouter(Layout)

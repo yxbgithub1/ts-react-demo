@@ -9,12 +9,24 @@ type PropsType = RouteComponentProps<PathParamsType> & {
     history?: any
     // your props here
 }
+type RouterEvent = {
+    push: (path: string) => void
+}
 
 export default class Base<P={}, S={}> extends React.Component<PropsType> {
+    
+    push(path: any){
+        this.props.history.push(path)
+    }
+
+    route: RouterEvent = {
+        push: (path: any) => {
+            this.props.history.push(path)
+        }
+    }
+
     /** 登陆token */
     get token() {
         return Storage.get('token')
     }
 }
-
-

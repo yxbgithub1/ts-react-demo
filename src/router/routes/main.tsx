@@ -8,8 +8,8 @@ export const routes = [
         component: asyncComponent(() => import('@/base/pages/login'))
     },
     {
-        path: '/home',
-        name: 'home',
+        path: '/admin',
+        name: 'admin',
         component: asyncComponent(() => import('@/base/pages/admin'))
     },
     {
