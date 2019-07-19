@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '@assets/scss/base.scss';
 import * as serviceWorker from './serviceWorker';
-import { routes, RouteWithRoutes } from '@/router'
-import Layout from '@/base/layout'
+import { Routers } from '@components'
+import { routes } from '@/base/routes'
+import Layout from 'base/layout'
 import { BrowserRouter } from 'react-router-dom'
 
 const App = () => (
     <BrowserRouter>
         <Layout>
-            <RouteWithRoutes routes={routes} />
+            <Routers routes={routes} no={true} />
         </Layout>
     </BrowserRouter>
 )

@@ -4,7 +4,7 @@ import { Header, Mainer, Footer } from './components'
 
 export default class Admin extends Base {
     componentDidMount(){
-        console.log(this.token, '当前token')
+        // console.log(this.token, '当前token')
     }
     render() {
         return (

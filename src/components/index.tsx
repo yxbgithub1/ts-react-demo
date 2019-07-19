@@ -1,5 +1,6 @@
 export * from './form'
 export * from './flex'
+export * from './router'
 export * from './message'
 export * from './iconfont'
 export * from './container'

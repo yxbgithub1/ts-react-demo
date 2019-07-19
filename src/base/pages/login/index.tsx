@@ -4,8 +4,8 @@ import { Storage } from '@utils'
 
 export default class Login extends Base {
     login = () => {
-        this.route.push('admin')
         Storage.set('token', 123)
+        this.history.push('/')
     }
     render(){
         return (
