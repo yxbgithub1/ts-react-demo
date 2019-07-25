@@ -5,9 +5,9 @@ import { Storage } from '@utils'
 export default class Login extends Base {
     login = () => {
         Storage.set('token', 123)
-        this.history.push('/')
+        this.history.replace('/admin/home')
     }
-    render(){
+    render() {
         return (
             <section>
                 <h1>登录</h1>

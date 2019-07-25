@@ -49,6 +49,7 @@
         }
     },
     "include": [
-        "src"
+        "src",
+        "src/base/routes/libs/.tsx"
     ]
 }

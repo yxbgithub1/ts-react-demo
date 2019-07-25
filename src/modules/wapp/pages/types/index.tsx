@@ -4,7 +4,7 @@ import Base from '@/base'
 export default class Types extends Base {
     render() {
         return (
-            <div>商品管理</div>
+            <div>外部类别管理</div>
         )
     }
 }
