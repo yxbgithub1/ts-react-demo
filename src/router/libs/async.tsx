@@ -4,12 +4,12 @@ import React from 'react'
  * @param {{ (): Promise<any>; (): void; }} importComponent
  * @returns
  */
-export function asyncComponent(importComponent: { (): Promise<any>; (): void; }) {
+export function asyncComponent(importComponent: { (): Promise<any>; (): void }) {
     return class AsyncComponent extends React.Component<{}, { component: any }> {
         constructor(props: any) {
             super(props)
             this.state = {
-                component: null
+                component: null,
             }
         }
         async componentDidMount() {

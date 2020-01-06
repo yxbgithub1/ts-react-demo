@@ -9,7 +9,7 @@ export class Sidebar extends Base {
     rootSubmenuKeys = ['1', '2', '3']
 
     state = {
-        openKeys: ['1']
+        openKeys: ['1'],
     }
 
     /** 选中菜单跳转路由 */
@@ -40,10 +40,10 @@ export class Sidebar extends Base {
                     defaultSelectedKeys={['1']}
                     openKeys={this.state.openKeys}
                     onSelect={this.onSelect}
-                    onOpenChange={this.onOpenChange} >
+                    onOpenChange={this.onOpenChange}>
                     {SidebarMenu(siders)}
                 </Menu>
-            </Layout.Sider >
+            </Layout.Sider>
         )
     }
 }

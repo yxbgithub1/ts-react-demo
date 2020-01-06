@@ -2,10 +2,10 @@ import React from 'react'
 import { Storage } from '@utils'
 import { PropsType, RouterEvent } from './@type'
 
-export default class Base<P={}, S={}> extends React.PureComponent<PropsType> {
+export default class Base<P = {}, S = {}> extends React.PureComponent<PropsType> {
     /**
      * go        前进/后退 (n)
-     * goBack    后退一页  
+     * goBack    后退一页
      * goForward 前进一页
      * push      新增一条历史记录 (path, state)
      * replace   替换当前历史记录 (path, state)
