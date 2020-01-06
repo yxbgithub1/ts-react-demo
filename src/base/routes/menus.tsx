@@ -1,4 +1,3 @@
-// const ROOT_PATH = '/admin/'
 export default [
     {
         id: '1',
@@ -15,20 +14,20 @@ export default [
                 id: '2-1',
                 name: '商品管理',
                 path: '/admin/jd/goods',
-                // children: [
-                //     {
-                //         id: '1-1-1',
-                //         name: '商品上架',
-                //         path: 'jd/goods/add',
-                //         component: 1
-                //     },
-                //     {
-                //         id: '1-1-2',
-                //         name: '商品下架',
-                //         path: 'jd/goods/remove',
-                //         component: 2
-                //     },
-                // ]
+                children: [
+                    {
+                        id: '1-1-1',
+                        name: '商品上架',
+                        path: 'jd/goods/add',
+                        component: 1,
+                    },
+                    {
+                        id: '1-1-2',
+                        name: '商品下架',
+                        path: 'jd/goods/remove',
+                        component: 2,
+                    },
+                ],
             },
             {
                 id: '2-2',
@@ -39,8 +38,8 @@ export default [
                 id: '2-3',
                 name: '订单管理',
                 path: '/admin/jd/types',
-            }
-        ]
+            },
+        ],
     },
     {
         id: '3',
@@ -61,7 +60,7 @@ export default [
                 id: '3-3',
                 name: '视频管理',
                 path: '/admin/wapp/types',
-            }
-        ]
+            },
+        ],
     },
 ]

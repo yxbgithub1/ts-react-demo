@@ -6,9 +6,4 @@ const role3: any = ['/admin/home']
 
 const role4: any = ['/admin', ...role1, ...role2, ...role3]
 
-export {
-    role1,
-    role2,
-    role3,
-    role4
-}
+export { role1, role2, role3, role4 }
